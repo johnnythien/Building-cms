@@ -1,0 +1,190 @@
+/* File: building-cms/src/screens/tax/TaxDashboard.css */
+/* Cải thiện giao diện Tab và Animations */
+
+.tax-dashboard-container {
+    animation: fadeIn 0.3s ease-in;
+    background: transparent;
+    min-height: 100vh;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+.page-header-wrapper {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.page-header-wrapper .page-header {
+    margin-bottom: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: none;
+    flex: 1;
+    width: 100%;
+}
+
+.tax-content-card {
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.tax-alert {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.25rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tax-dashboard-tabs {
+    width: 100%;
+    overflow: hidden;
+}
+
+.tax-dashboard-tabs .nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid #dee2e6;
+    margin: 0;
+    padding: 0;
+}
+
+.tax-dashboard-tabs .nav-item {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+}
+
+.tax-dashboard-tabs .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #495057;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1rem;
+    position: relative;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tax-dashboard-tabs .nav-link:hover {
+    color: #0d6efd;
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.tax-dashboard-tabs .nav-link.active {
+    font-weight: 600;
+    color: #0d6efd;
+    background-color: transparent;
+    border-bottom: 3px solid #0d6efd;
+    box-shadow: none;
+}
+
+.tab-content {
+    background-color: transparent;
+    padding: 1.5rem 0;
+    border-radius: 0;
+    border: none;
+    animation: slideIn 0.3s ease-out;
+    min-height: 400px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Stat Cards Animation */
+.stat-card {
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Table improvements */
+.table-hover tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa !important;
+    cursor: pointer;
+}
+
+/* Card improvements */
+.card {
+    transition: box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+}

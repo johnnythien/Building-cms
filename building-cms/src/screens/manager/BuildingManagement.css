@@ -1,0 +1,454 @@
+.building-management {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.dashboard-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info span {
+  margin-right: 1rem;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+.dashboard-content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  background-color: #34495e;
+  width: 250px;
+  color: white;
+  padding: 1rem 0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.nav-item:hover {
+  background-color: #2c3e50;
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #b89952 0%, #c9a961 100%);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #f5c6cb;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.section-header h2 {
+  font-size: 1.15rem;
+  margin: 0;
+  color: #333;
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.section-header h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(135deg, #c9a961 0%, #d4a574 100%);
+  border-radius: 2px;
+}
+
+.add-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.add-btn:hover {
+  background-color: #219653;
+}
+
+.back-btn {
+  padding: 0.35rem 0.75rem;
+  background-color: #f8f9fa;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #edf2f7;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+/* Building List */
+.building-list {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.building-header {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 0.8fr 0.8fr 1fr 1fr 1.5fr;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  background-color: #f9fafc;
+  border-bottom: 1px solid #edf0f7;
+  font-size: 0.8rem;
+  color: #4a5568;
+  letter-spacing: 0.02em;
+}
+
+.building-item {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 0.8fr 0.8fr 1fr 1fr 1.5fr;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #edf0f7;
+  font-size: 0.85rem;
+  align-items: center;
+  transition: background-color 0.15s ease;
+}
+
+.building-item:last-child {
+  border-bottom: none;
+}
+
+.building-item:hover {
+  background-color: #f8faff;
+}
+
+.building-name, 
+.building-address,
+.building-floors,
+.building-apts,
+.building-year,
+.building-status,
+.building-actions {
+  padding: 0 0.5rem;
+}
+
+.building-status {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.building-status.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.building-status.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.building-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-btn, .edit-btn, .delete-btn {
+  padding: 0.3rem 0.65rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.view-btn {
+  background-color: #edf2ff;
+  color: #3182ce;
+}
+
+.view-btn:hover {
+  background-color: #e6efff;
+}
+
+.edit-btn {
+  background-color: #fef5e7;
+  color: #dd6b20;
+}
+
+.edit-btn:hover {
+  background-color: #fdebd0;
+}
+
+.delete-btn {
+  background-color: #fee2e2;
+  color: #e53e3e;
+}
+
+.delete-btn:hover {
+  background-color: #fecaca;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+}
+
+/* Building Detail */
+.building-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.info-card h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.info-card p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.status-badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.status-badge.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.building-apartments, .building-residents {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.building-apartments h3, .building-residents h3 {
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
+  margin-top: 0;
+}
+
+.apartments-list, .residents-list {
+  margin-top: 1rem;
+}
+
+.apartment-header {
+  grid-template-columns: 1fr 0.7fr 1fr 0.7fr 1.5fr 2fr;
+}
+
+.apartment-item {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 1fr 0.7fr 1.5fr 2fr;
+  padding: 0.8rem;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.apartment-status {
+  font-weight: 500;
+}
+
+.apartment-status.occupied {
+  color: #e74c3c;
+}
+
+.apartment-status.vacant {
+  color: #27ae60;
+}
+
+.resident-header {
+  grid-template-columns: 2fr 2fr 1.5fr 3fr;
+}
+
+.resident-item {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr 3fr;
+  padding: 0.8rem;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+/* Building Form */
+.building-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.submit-btn {
+  padding: 0.375rem 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 992px) {
+  .building-header, 
+  .building-item {
+    grid-template-columns: 1.5fr 2fr 0.8fr 0.8fr 1fr 1fr;
+  }
+  
+  .building-actions {
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .building-info {
+    grid-template-columns: 1fr;
+  }
+} 

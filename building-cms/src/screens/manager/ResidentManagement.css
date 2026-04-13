@@ -1,0 +1,501 @@
+.resident-management {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header-wrapper {
+  width: 100%;
+}
+
+.dashboard-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info span {
+  margin-right: 1rem;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+.dashboard-content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  background-color: #34495e;
+  width: 250px;
+  color: white;
+  padding: 1rem 0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.nav-item:hover {
+  background-color: #2c3e50;
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #b89952 0%, #c9a961 100%);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #f5c6cb;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.add-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.add-btn:hover {
+  background-color: #219653;
+}
+
+.back-btn {
+  background-color: #7f8c8d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.back-btn:hover {
+  background-color: #6c7a7d;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+/* Search Box */
+.search-box {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-box input:hover {
+  border-color: #d4a574;
+  box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 220, 0.3) 100%);
+}
+
+.search-box input:focus {
+  border-color: #d4a574 !important;
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.3), 0 0 20px rgba(255, 215, 0, 0.2) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 220, 0.4) 100%) !important;
+  outline: none !important;
+}
+
+/* Resident List */
+.resident-list {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.resident-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr 1fr 1.5fr;
+  padding: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.resident-item {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr 1fr 1.5fr;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.resident-item:last-child {
+  border-bottom: none;
+}
+
+.resident-item:hover {
+  background: linear-gradient(135deg, rgba(255, 248, 220, 0.3) 0%, rgba(255, 236, 179, 0.2) 100%);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.15);
+  transform: translateX(4px);
+  border-left: 3px solid #d4a574;
+}
+
+.resident-name, 
+.resident-email,
+.resident-phone,
+.resident-apartments,
+.resident-actions {
+  padding: 0 0.5rem;
+}
+
+.resident-apartments {
+  text-align: center;
+}
+
+.resident-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-btn, .edit-btn, .delete-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.view-btn {
+  background: transparent;
+  color: #007bff;
+  box-shadow: none;
+}
+
+.view-btn:hover {
+  color: #0056b3;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.edit-btn {
+  color: #007bff;
+  background-color: white;
+  border: 1px solid #b3d9ff;
+}
+
+.edit-btn:hover {
+  background-color: #f8f9fa;
+  border-color: #80bdff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.edit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn svg,
+.delete-btn path {
+  color: white !important;
+  fill: white !important;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.delete-btn:hover svg,
+.delete-btn:hover path {
+  color: white !important;
+  fill: white !important;
+}
+
+.delete-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+  color: white;
+}
+
+.delete-btn:active svg,
+.delete-btn:active path {
+  color: white !important;
+  fill: white !important;
+}
+
+.delete-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+}
+
+/* Resident Detail */
+.resident-info {
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.info-card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.resident-apartments {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.resident-apartments h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
+  margin-top: 0;
+}
+
+.apartments-list {
+  margin-top: 1rem;
+}
+
+.apartments-grid .apartment-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.apartments-grid .apartment-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 0.8rem;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+/* Resident Form */
+.resident-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:hover {
+  border-color: #d4a574;
+  box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 220, 0.3) 100%);
+}
+
+input:focus {
+  outline: none !important;
+  border-color: #d4a574 !important;
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.3), 0 0 20px rgba(255, 215, 0, 0.2) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 220, 0.4) 100%) !important;
+}
+
+.form-actions {
+  margin-top: 2rem;
+}
+
+.submit-btn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Metallic hover effects for form controls and cards */
+.form-control:hover {
+  border-color: #d4a574 !important;
+  box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.2) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 220, 0.3) 100%) !important;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #d4a574 !important;
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.3), 0 0 20px rgba(255, 215, 0, 0.2) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 248, 220, 0.4) 100%) !important;
+  outline: none !important;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.data-table-container {
+  width: 100%;
+}
+
+.data-table-header h5 {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.data-table th {
+  font-weight: 600;
+}
+
+.data-table-container tbody tr:hover {
+  background: linear-gradient(135deg, rgba(255, 248, 220, 0.3) 0%, rgba(255, 236, 179, 0.2) 100%);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.15);
+  transform: translateX(4px);
+  transition: all 0.3s ease;
+  border-left: 3px solid #d4a574;
+} 

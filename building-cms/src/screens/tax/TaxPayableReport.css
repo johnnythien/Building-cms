@@ -1,0 +1,254 @@
+/* Tax Payable Report - Enterprise Dashboard Styles */
+
+.tax-payable-report-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Enterprise Stat Cards */
+.enterprise-stat-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border: 1px solid #e5e7eb !important;
+}
+
+.enterprise-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.stat-icon {
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.stat-value {
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+/* Table Styles - Compact Enterprise */
+.table-sm {
+    font-size: 0.875rem;
+}
+
+.table-sm thead th {
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    padding: 0.5rem 0.75rem;
+    background-color: #f9fafb !important;
+    border-bottom: 2px solid #e5e7eb;
+    color: #1f2937;
+}
+
+.table-sm tbody td {
+    padding: 0.5rem 0.75rem;
+    vertical-align: middle;
+    border-color: #e5e7eb;
+}
+
+.table-sm tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.table-sm tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.table-sm tfoot th {
+    font-weight: 600;
+    padding: 0.75rem;
+    background-color: #f9fafb;
+    border-top: 2px solid #e5e7eb;
+    color: #1f2937;
+}
+
+/* Monospaced font for currency values */
+.monospace-currency {
+    font-family: 'Courier New', 'Roboto Mono', monospace;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid #e5e7eb;
+    transition: box-shadow 0.15s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.card-header {
+    background-color: #f9fafb !important;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+}
+
+/* Badge Styles */
+.badge {
+    font-weight: 500;
+    padding: 0.25em 0.5em;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+code {
+    font-size: 0.75rem;
+    color: #1f2937;
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+    font-family: 'Courier New', 'Roboto Mono', monospace;
+}
+
+/* Alert Styles */
+.alert {
+    border-left: 3px solid;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+}
+
+.alert-warning {
+    border-left-color: #f59e0b;
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.alert-danger {
+    border-left-color: #dc2626;
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Form Controls */
+.form-select,
+.form-control {
+    border-radius: 4px;
+    border-color: #d1d5db;
+    font-size: 0.875rem;
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-label {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+}
+
+.btn-outline-secondary {
+    color: #6b7280;
+    border-color: #d1d5db;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+    color: #374151;
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    #tax-payable-report-content {
+        background: white;
+        padding: 20px;
+    }
+    
+    .card {
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+    }
+    
+    .btn {
+        display: none !important;
+    }
+    
+    .table-sm {
+        font-size: 0.75rem;
+    }
+    
+    .enterprise-stat-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-value {
+        font-size: 1rem !important;
+    }
+    
+    .table-sm {
+        font-size: 0.75rem;
+    }
+    
+    .card-body {
+        padding: 0.75rem !important;
+    }
+    
+    .enterprise-stat-card .card-body {
+        padding: 0.75rem !important;
+    }
+}
+
+/* Loading States */
+.spinner-border {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Text Colors - Enterprise Palette */
+.text-indigo {
+    color: #4f46e5 !important;
+}
+
+.text-slate {
+    color: #64748b !important;
+}
+
+.text-emerald {
+    color: #059669 !important;
+}
+
+/* Utility Classes */
+.border-radius-sm {
+    border-radius: 4px;
+}
+
+.border-radius-md {
+    border-radius: 6px;
+}
+
